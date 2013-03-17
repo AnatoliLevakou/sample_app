@@ -1,6 +1,13 @@
 SampleApp::Application.routes.draw do
-  get "pages/home"
-  get "pages/help"
-  get "pages/contact"
-  get "pages/about"
+
+  match '/signup',  :to => 'users#new'
+  get "users/new"
+  match '/help',    :to => 'pages#help'
+  #get "pages/help"
+  match '/contact', :to => 'pages#contact'
+  #get "pages/contact"
+  match '/about',   :to => 'pages#about'
+  #get "pages/about"
+
+  root :to => 'pages#home'
 end
